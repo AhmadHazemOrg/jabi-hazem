@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Order {
+public class OrderHistory {
     @Given("a customer is logged into the system")
     public void a_customer_is_logged_into_the_system() {
         // Write code here that turns the phrase above into concrete actions
