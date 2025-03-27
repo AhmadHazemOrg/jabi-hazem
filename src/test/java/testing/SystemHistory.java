@@ -4,59 +4,59 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class OrderHistory {
-    @Given("a customer is logged into the system")
-    public void a_customer_is_logged_into_the_system() {
+public class SystemHistory {
+
+    @Given("a customer places a new meal order")
+    public void a_customer_places_a_new_meal_order() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the customer navigates to the order history section")
-    public void the_customer_navigates_to_the_order_history_section() {
+    @When("the order is confirmed and completed")
+    public void the_order_is_confirmed_and_completed() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should display a list of past meal orders")
-    public void the_system_should_display_a_list_of_past_meal_orders() {
+    @Then("the system should save the order details in the customer's history")
+    public void the_system_should_save_the_order_details_in_the_customer_s_history() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("a chef is logged into the system")
-    public void a_chef_is_logged_into_the_system() {
+    @Given("a system administrator is logged into the system")
+    public void a_system_administrator_is_logged_into_the_system() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("a customer has past meal orders in the system")
-    public void a_customer_has_past_meal_orders_in_the_system() {
+    @When("the administrator accesses the order analytics section")
+    public void the_administrator_accesses_the_order_analytics_section() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the chef views the customer's profile")
-    public void the_chef_views_the_customer_s_profile() {
+    @Then("the system should display customer order trends and history")
+    public void the_system_should_display_customer_order_trends_and_history() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should display the customer's past meal orders")
-    public void the_system_should_display_the_customer_s_past_meal_orders() {
+    @Given("the system has stored customer order data")
+    public void the_system_has_stored_customer_order_data() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the customer navigates to the personalized meal plans section")
-    public void the_customer_navigates_to_the_personalized_meal_plans_section() {
+    @When("the system administrator requests a trends report")
+    public void the_system_administrator_requests_a_trends_report() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should generate meal suggestions based on past orders")
-    public void the_system_should_generate_meal_suggestions_based_on_past_orders() {
+    @Then("the system should generate an analysis of popular meals and customer preferences")
+    public void the_system_should_generate_an_analysis_of_popular_meals_and_customer_preferences() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-
 }
