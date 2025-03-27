@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Tasks {
+public class ManagerTasks {
 
     @Given("a kitchen manager is logged into the system")
     public void a_kitchen_manager_is_logged_into_the_system() {
@@ -12,75 +12,70 @@ public class Tasks {
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("there are pending cooking tasks in the system")
-    public void there_are_pending_cooking_tasks_in_the_system() {
+    @When("the kitchen manager assigns a cooking task to a chef")
+    public void the_kitchen_manager_assigns_a_cooking_task_to_a_chef() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the kitchen manager assigns a task to a chef")
-    public void the_kitchen_manager_assigns_a_task_to_a_chef() {
+    @Then("the system should assign the task based on the chef’s expertise and availability")
+    public void the_system_should_assign_the_task_based_on_the_chef_s_expertise_and_availability() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should update the task assignment")
-    public void the_system_should_update_the_task_assignment() {
+    @Then("the system should update the chef's task queue")
+    public void the_system_should_update_the_chef_s_task_queue() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should notify the assigned chef")
-    public void the_system_should_notify_the_assigned_chef() {
+    @Given("multiple chefs are available in the kitchen")
+    public void multiple_chefs_are_available_in_the_kitchen() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("a chef is logged into the system")
-    public void a_chef_is_logged_into_the_system() {
+    @Given("new meal orders are received")
+    public void new_meal_orders_are_received() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("a task has been assigned to the chef")
-    public void a_task_has_been_assigned_to_the_chef() {
+    @When("the system processes the workload distribution")
+    public void the_system_processes_the_workload_distribution() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the chef accesses their task list")
-    public void the_chef_accesses_their_task_list() {
+    @Then("the system should assign tasks to chefs based on their current workload")
+    public void the_system_should_assign_tasks_to_chefs_based_on_their_current_workload() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should display the assigned tasks")
-    public void the_system_should_display_the_assigned_tasks() {
+    @Then("the system should prioritize available chefs with relevant expertise")
+    public void the_system_should_prioritize_available_chefs_with_relevant_expertise() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("a chef has an assigned task")
-    public void a_chef_has_an_assigned_task() {
+    @Given("a kitchen manager is reviewing task assignments")
+    public void a_kitchen_manager_is_reviewing_task_assignments() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the chef marks the task as completed")
-    public void the_chef_marks_the_task_as_completed() {
+    @When("the manager reassigns a task to a different chef")
+    public void the_manager_reassigns_a_task_to_a_different_chef() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should update the task status to {string}")
-    public void the_system_should_update_the_task_status_to(String string) {
+    @Then("the system should update the chef’s task queue accordingly")
+    public void the_system_should_update_the_chef_s_task_queue_accordingly() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
-    }
 
-    @Then("the kitchen manager should be notified of the completion")
-    public void the_kitchen_manager_should_be_notified_of_the_completion() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
 }
