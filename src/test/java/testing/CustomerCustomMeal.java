@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CustomMeal {
+public class CustomerCustomMeal {
     @Given("a customer is logged into the system")
     public void a_customer_is_logged_into_the_system() {
         // Write code here that turns the phrase above into concrete actions
@@ -17,64 +17,71 @@ public class CustomMeal {
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the customer selects ingredients for their custom meal")
-    public void the_customer_selects_ingredients_for_their_custom_meal() {
+    @When("the customer selects their desired ingredients")
+    public void the_customer_selects_their_desired_ingredients() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should validate the selected ingredients")
-    public void the_system_should_validate_the_selected_ingredients() {
+    @Then("the system should display the selected ingredients in the custom meal preview")
+    public void the_system_should_display_the_selected_ingredients_in_the_custom_meal_preview() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should display a preview of the custom meal")
-    public void the_system_should_display_a_preview_of_the_custom_meal() {
+    @Given("a customer has selected ingredients for a meal")
+    public void a_customer_has_selected_ingredients_for_a_meal() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("the customer selects an incompatible combination of ingredients")
-    public void the_customer_selects_an_incompatible_combination_of_ingredients() {
+    @When("the customer confirms and saves the meal customization")
+    public void the_customer_confirms_and_saves_the_meal_customization() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the customer attempts to save the custom meal")
-    public void the_customer_attempts_to_save_the_custom_meal() {
+    @When("the customer places an order")
+    public void the_customer_places_an_order() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should display an error message about incompatible ingredients")
-    public void the_system_should_display_an_error_message_about_incompatible_ingredients() {
+    @Then("the system should process the order with the selected ingredients")
+    public void the_system_should_process_the_order_with_the_selected_ingredients() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Given("a customer has selected valid ingredients for a custom meal")
-    public void a_customer_has_selected_valid_ingredients_for_a_custom_meal() {
+    @Then("the system should notify the kitchen of the custom meal request")
+    public void the_system_should_notify_the_kitchen_of_the_custom_meal_request() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("the customer confirms the order")
-    public void the_customer_confirms_the_order() {
+    @Given("a customer has dietary preferences and allergies saved in the system")
+    public void a_customer_has_dietary_preferences_and_allergies_saved_in_the_system() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should save the custom meal request")
-    public void the_system_should_save_the_custom_meal_request() {
+    @When("the customer customizes a meal")
+    public void the_customer_customizes_a_meal() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("the system should notify the kitchen staff about the new custom meal order")
-    public void the_system_should_notify_the_kitchen_staff_about_the_new_custom_meal_order() {
+    @Then("the system should highlight ingredients that match their dietary preferences")
+    public void the_system_should_highlight_ingredients_that_match_their_dietary_preferences() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
+    @Then("the system should warn the customer about allergens before selection")
+    public void the_system_should_warn_the_customer_about_allergens_before_selection() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
 
 }
