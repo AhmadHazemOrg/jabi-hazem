@@ -1,0 +1,4 @@
+Vegan Salad;lettuce, tomato, cucumber, olive oil
+Grilled Chicken;chicken, olive oil, garlic
+Fruit Bowl;apple, banana, grapes, orange
+green salad;spinach, avocado, lime

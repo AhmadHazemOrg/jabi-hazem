@@ -1,0 +1,4 @@
+Vegan Salad;Lettuce,Tomato,Carrot;Vegan
+Peanut Chicken;Peanut,Chicken,Spices;High-Protein
+Vegetarian Pasta;Wheat,Cheese,Tomato;Vegetarian
+Fruit Bowl;Apple,Banana,Grapes;Vegan,Vegetarian

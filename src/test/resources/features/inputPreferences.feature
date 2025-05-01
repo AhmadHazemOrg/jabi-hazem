@@ -1,23 +1,31 @@
-Feature: Input dietary preferences and allergies
+Feature: Manage Dietary Preferences and Allergies
 
-  Scenario: Customer sets dietary preferences
-    Given a customer is logged into the system
-    When the customer navigates to the dietary preferences section
-    And the customer selects their dietary preferences
-    And the customer saves the preferences
-    Then the system should store the dietary preferences
-    And the system should confirm the preferences are saved successfully
+  Scenario Outline: Customer sets preferences and allergies
+    Given the Customer "<username>" and "<password>" is logged in
+    When the Customer sets dietary preferences to "<preferences>"
+    And the Customer sets allergies to "<allergies>"
+    Then the system should store the preferences and allergies successfully
 
-  Scenario: Customer sets allergy restrictions
-    Given a customer is logged into the system
-    When the customer navigates to the allergy settings section
-    And the customer selects ingredients they are allergic to
-    And the customer saves the allergy settings
-    Then the system should store the allergy information
-    And the system should confirm the allergy settings are saved successfully
+    Examples:
+      | username         | password | preferences | allergies |
+      | hazem mahamdeh   | 2004     | Vegan       | Gluten    |
 
-  Scenario: System applies dietary preferences and allergy settings to meal recommendations
-    Given a customer has saved their dietary preferences and allergy information
-    When the customer browses the menu
-    Then the system should display only meals that match their dietary preferences
-    And the system should exclude meals that contain allergens
+  Scenario Outline: Recommend meals that match customer preferences
+    Given the Customer "<username>" and "<password>" is logged in
+    And the Customer has preferences "<preferences>" and allergies "<allergies>"
+    When the system recommends meals
+    Then should match "<preferences>"
+
+    Examples:
+      | username         | password | preferences | allergies |
+      | hazem mahamdeh   | 2004     | Vegan       | Gluten    |
+
+  Scenario Outline: Do not recommend meals that conflict with allergies
+    Given the Customer "<username>" and "<password>" is logged in
+    And the Customer has preferences "<preferences>" and allergies "<allergies>"
+    When the system recommends meals
+    Then the system should exclude meals that contain "<allergies>"
+
+    Examples:
+      | username         | password | preferences | allergies |
+      | hazem mahamdeh   | 2004     | Vegan       | Gluten    |

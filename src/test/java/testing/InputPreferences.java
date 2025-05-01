@@ -3,97 +3,73 @@ package testing;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Customer;
+import org.example.Meal;
+import org.example.MealRecommender;
+
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class InputPreferences {
 
-    @Given("a customer is logged into the system")
-    public void a_customer_is_logged_into_the_system() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    private final Customer customer = new Customer();
+    private final MealRecommender recommender = new MealRecommender();
+    private List<Meal> recommendedMeals;
+
+    @Given("the Customer {string} and {string} is logged in")
+    public void the_customer_and_password_is_logged_in(String username, String password) {
+        customer.setUsername(username);
+        customer.setPassword(password);
+        assertTrue("Login failed for user: " + username, customer.login());
     }
 
-    @When("the customer navigates to the dietary preferences section")
-    public void the_customer_navigates_to_the_dietary_preferences_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("the Customer sets dietary preferences to {string}")
+    public void the_customer_sets_dietary_preferences_to(String preferences) {
+        customer.setDietaryPreferences(preferences);
     }
 
-    @When("the customer selects their dietary preferences")
-    public void the_customer_selects_their_dietary_preferences() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("the Customer sets allergies to {string}")
+    public void the_customer_sets_allergies_to(String allergies) {
+        customer.setAllergies(allergies);
     }
 
-    @When("the customer saves the preferences")
-    public void the_customer_saves_the_preferences() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("the system should store the preferences and allergies successfully")
+    public void the_system_should_store_the_preferences_and_allergies_successfully() {
+        assertNotNull("Dietary preferences should not be null", customer.getDietaryPreferences());
+        assertNotNull("Allergies should not be null", customer.getAllergies());
     }
 
-    @Then("the system should store the dietary preferences")
-    public void the_system_should_store_the_dietary_preferences() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Given("the Customer has preferences {string} and allergies {string}")
+    public void the_customer_has_preferences_and_allergies(String preferences, String allergies) {
+        customer.setDietaryPreferences(preferences);
+        customer.setAllergies(allergies);
     }
 
-    @Then("the system should confirm the preferences are saved successfully")
-    public void the_system_should_confirm_the_preferences_are_saved_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("the system recommends meals")
+    public void the_system_recommends_meals() {
+        recommendedMeals = recommender.recommendMeals(customer);
+
+        assertNotNull("Recommended meals list should not be null", recommendedMeals);
+
+
+
     }
 
-    @When("the customer navigates to the allergy settings section")
-    public void the_customer_navigates_to_the_allergy_settings_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Then("should match {string}")
+    public void should_match(String preference) {
+        for (Meal meal : recommendedMeals) {
+            assertTrue("Meal '" + meal.getName() + "' does not match dietary preference: " + preference,
+                    meal.getDietaryTags().contains(preference));
+        }
     }
 
-    @When("the customer selects ingredients they are allergic to")
-    public void the_customer_selects_ingredients_they_are_allergic_to() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("the system should exclude meals that contain {string}")
+    public void the_system_should_exclude_meals_that_contain(String allergen) {
+        for (Meal meal : recommendedMeals) {
+            assertFalse("Meal '" + meal.getName() + "' should not contain allergen: " + allergen,
+                    meal.getIngredients().contains(allergen));
+        }
     }
-
-    @When("the customer saves the allergy settings")
-    public void the_customer_saves_the_allergy_settings() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("the system should store the allergy information")
-    public void the_system_should_store_the_allergy_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("the system should confirm the allergy settings are saved successfully")
-    public void the_system_should_confirm_the_allergy_settings_are_saved_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Given("a customer has saved their dietary preferences and allergy information")
-    public void a_customer_has_saved_their_dietary_preferences_and_allergy_information() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("the customer browses the menu")
-    public void the_customer_browses_the_menu() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("the system should display only meals that match their dietary preferences")
-    public void the_system_should_display_only_meals_that_match_their_dietary_preferences() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("the system should exclude meals that contain allergens")
-    public void the_system_should_exclude_meals_that_contain_allergens() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
 }

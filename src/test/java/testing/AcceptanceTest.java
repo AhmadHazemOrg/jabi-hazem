@@ -6,12 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/main/java/resources/features",
+        features = "src/test/resources/features",
         plugin = {"summary", "html:target/cucumber/report.html"},
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        glue = "testing"
+        glue = {"cookingSystem/src/test/java/testing"}
 )
 public class AcceptanceTest {
 }
-
