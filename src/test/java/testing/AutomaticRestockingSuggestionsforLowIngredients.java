@@ -1,6 +1,8 @@
-package org.example;
+package testing;
 
 import io.cucumber.java.en.*;
+import org.example.IngredientInventoryManager;
+
 import static org.junit.Assert.*;
 
 import java.util.List;
