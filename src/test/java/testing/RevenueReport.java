@@ -52,19 +52,18 @@ public class RevenueReport {
 
     @When("the admin generates a revenue report for the date range {string}")
     public void the_admin_generates_a_revenue_report_for_the_date_range(String dateRange) {
-
         String[] dates = dateRange.split(" to ");
         String startDate = dates[0];
         String endDate = dates[1];
         List<Meal> filteredMeals = Meal.filterMealsByDateRange(meals, startDate, endDate);
 
-        lastComputedRevenue= filteredMeals.stream()
+        lastComputedRevenue = filteredMeals.stream()
                 .mapToDouble(Meal::getPrice)
                 .sum();
 
         System.out.println("Total Revenue for Date Range: " + lastComputedRevenue);
 
-        assertNotNull("Revenue report should be generated for the date range.", lastComputedRevenue);
+        assertTrue("Revenue should be non-negative", lastComputedRevenue >= 0);
     }
 
     @Then("the report should display the total revenue for the range as {string}")
