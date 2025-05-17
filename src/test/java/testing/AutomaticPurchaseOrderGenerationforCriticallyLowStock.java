@@ -51,8 +51,7 @@ public class AutomaticPurchaseOrderGenerationforCriticallyLowStock {
 
     @Given("a purchase order for {string} has already been generated and is pending")
     public void a_purchase_order_for_has_already_been_generated_and_is_pending(String ingredient) {
-        this.currentIngredient = ingredient;
-        manager.createPurchaseOrderIfNeeded(ingredient);
+        the_system_has_generated_a_purchase_order_for(ingredient); // ✅ إعادة استخدام الدالة وتجنب التكرار
     }
 
     @When("the stock level remains critically low")
