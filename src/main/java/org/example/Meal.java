@@ -126,24 +126,6 @@ public class Meal {
         return mealsToNotify;
     }
 
-    /*public static List<Meal> filterMealsByDateRange(List<Meal> meals, String startDate, String endDate) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-        return meals.stream()
-                .filter(meal -> {
-                    try {
-                        Date mealDate = sdf.parse(meal.getDate());
-                        Date start = sdf.parse(startDate);
-                        Date end = sdf.parse(endDate);
-                        return !mealDate.before(start) && !mealDate.after(end);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        return false;
-                    }
-                })
-                .collect(Collectors.toList());
-    }
-*/
 
     public static List<Meal> filterMealsByDateRange(List<Meal> meals, String startDate, String endDate) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
