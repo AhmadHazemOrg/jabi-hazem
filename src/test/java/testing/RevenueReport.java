@@ -28,6 +28,7 @@ public class RevenueReport {
         }
     }
 
+
     @When("the admin generates a revenue report")
     public void the_admin_generates_a_revenue_report() {
         double totalRevenue = meals.stream()
@@ -35,8 +36,9 @@ public class RevenueReport {
                 .sum();
 
         System.out.println("Total Revenue: " + totalRevenue);
-        assertNotNull("Revenue report should be generated.", totalRevenue);
+        assertTrue("Revenue should be non-negative", totalRevenue >= 0);
     }
+
 
     @Then("the report should display the total revenue as {string}")
     public void the_report_should_display_the_total_revenue_as(String expectedTotal) {
