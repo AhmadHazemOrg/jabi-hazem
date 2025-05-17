@@ -11,12 +11,6 @@ import static org.junit.Assert.*;
 
 public class AdminReorder{
 
-    MyApplection app;
-
-    public AdminReorder() {
-        app = new  MyApplection();
-
-    }
 
 
 
