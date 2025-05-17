@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-
+import java.util.logging.Logger;
 public class Meal {
     private String name;
     private List<String> ingredients;
@@ -17,8 +17,7 @@ public class Meal {
     private String category;
     private String date;
     private Date deliveryTime;
-
-
+    private static final Logger logger = Logger.getLogger(Meal.class.getName());
     public Meal(String name, Date deliveryTime) {
         this.name = name;
         this.deliveryTime = deliveryTime;
@@ -127,7 +126,7 @@ public class Meal {
         return mealsToNotify;
     }
 
-    public static List<Meal> filterMealsByDateRange(List<Meal> meals, String startDate, String endDate) {
+    /*public static List<Meal> filterMealsByDateRange(List<Meal> meals, String startDate, String endDate) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         return meals.stream()
@@ -144,8 +143,25 @@ public class Meal {
                 })
                 .collect(Collectors.toList());
     }
+*/
 
+    public static List<Meal> filterMealsByDateRange(List<Meal> meals, String startDate, String endDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+        return meals.stream()
+                .filter(meal -> {
+                    try {
+                        Date mealDate = sdf.parse(meal.getDate());
+                        Date start = sdf.parse(startDate);
+                        Date end = sdf.parse(endDate);
+                        return !mealDate.before(start) && !mealDate.after(end);
+                    } catch (Exception e) {
+                        logger.severe("Error parsing date: " + e.getMessage());
+                        return false;
+                    }
+                })
+                .collect(Collectors.toList());
+    }
 
     @Override
     public String toString() {
