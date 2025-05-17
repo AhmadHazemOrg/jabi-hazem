@@ -11,6 +11,15 @@ import static org.junit.Assert.*;
 
 public class AdminReorder{
 
+    MyApplection app;
+
+    public AdminReorder() {
+        app = new  MyApplection();
+
+    }
+
+
+
     private Admin administrator = new Admin();
     private Customer customer = new Customer();
     private List<Meal> storedOrderHistory;
