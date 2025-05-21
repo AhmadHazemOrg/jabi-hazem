@@ -1,0 +1,138 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > MealData</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: MealData (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MealData</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.3%
+  </span>
+  <span class="absValue">
+    (14/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;import java.util.*;
+&nbsp;
+<b class="nc">&nbsp;public class MealData {</b>
+<b class="fc">&nbsp;    public static final List&lt;String&gt; ALL_INGREDIENTS = Arrays.asList(</b>
+&nbsp;            &quot;rice&quot;, &quot;chicken&quot;, &quot;grilled vegetables&quot;, &quot;garlic sauce&quot;, &quot;pasta&quot;, &quot;beef&quot;, &quot;soy sauce&quot;, &quot;cheese&quot;, &quot;tofu&quot;, &quot;lamb&quot;
+&nbsp;    );
+&nbsp;
+<b class="fc">&nbsp;    public static final List&lt;String&gt; GLUTEN_FREE_INGREDIENTS = Arrays.asList(</b>
+&nbsp;            &quot;rice&quot;, &quot;chicken&quot;, &quot;grilled vegetables&quot;, &quot;garlic sauce&quot;, &quot;gluten-free bread&quot;
+&nbsp;    );
+&nbsp;
+<b class="fc">&nbsp;    public static final List&lt;String&gt; LACTOSE_FREE_INGREDIENTS = Arrays.asList(</b>
+&nbsp;            &quot;rice&quot;, &quot;chicken&quot;, &quot;tofu&quot;, &quot;grilled vegetables&quot;, &quot;pasta&quot;, &quot;soy sauce&quot;
+&nbsp;    );
+&nbsp;
+<b class="fc">&nbsp;    public static final Map&lt;String, Double&gt; INGREDIENT_PRICES = new HashMap&lt;&gt;();</b>
+&nbsp;
+&nbsp;    static {
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;rice&quot;, 2.0);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;chicken&quot;, 4.0);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;grilled vegetables&quot;, 3.0);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;garlic sauce&quot;, 1.5);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;pasta&quot;, 2.5);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;beef&quot;, 5.0);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;soy sauce&quot;, 1.0);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;cheese&quot;, 2.5);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;tofu&quot;, 3.0);</b>
+<b class="fc">&nbsp;        INGREDIENT_PRICES.put(&quot;lamb&quot;, 6.0);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-05-20 09:24</div>
+</div>
+</body>
+</html>

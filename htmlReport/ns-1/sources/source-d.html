@@ -1,0 +1,285 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Meal</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: Meal (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Meal</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    84%
+  </span>
+  <span class="absValue">
+    (21/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.4%
+  </span>
+  <span class="absValue">
+    (64/70)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;import java.io.BufferedReader;
+&nbsp;import java.io.FileReader;
+&nbsp;import java.io.IOException;
+&nbsp;import java.text.SimpleDateFormat;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Date;
+&nbsp;import java.util.List;
+&nbsp;import java.util.stream.Collectors;
+&nbsp;import java.util.logging.Logger;
+&nbsp;
+&nbsp;public class Meal {
+&nbsp;    private String name;
+&nbsp;    private List&lt;String&gt; ingredients;
+&nbsp;    private List&lt;String&gt; dietaryTags;
+<b class="fc">&nbsp;    private double price = 0.0;</b>
+&nbsp;    private String category;
+&nbsp;    private String date;
+&nbsp;    private Date deliveryTime;
+<b class="fc">&nbsp;    private static final Logger logger = Logger.getLogger(Meal.class.getName());</b>
+<b class="fc">&nbsp;    public Meal(String name, Date deliveryTime) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.deliveryTime = deliveryTime;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public Meal(String name, double price, String category, String date) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.price = price;</b>
+<b class="fc">&nbsp;        this.ingredients = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.dietaryTags = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.category = category;</b>
+<b class="fc">&nbsp;        this.date = date;</b>
+<b class="fc">&nbsp;        this.deliveryTime= new Date();</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public Meal(String name, List&lt;String&gt; ingredients, List&lt;String&gt; dietaryTags) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.ingredients = ingredients;</b>
+<b class="fc">&nbsp;        this.dietaryTags = dietaryTags;</b>
+<b class="fc">&nbsp;        this.price = 0.0;</b>
+<b class="fc">&nbsp;        this.category = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.date = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.deliveryTime= new Date();</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public Meal() {</b>
+&nbsp;
+&nbsp;    }
+<b class="fc">&nbsp;    public Meal(String name, double price) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.price = price;</b>
+<b class="fc">&nbsp;        this.category = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.date = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.ingredients = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.dietaryTags = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.deliveryTime= new Date();</b>
+&nbsp;    }
+&nbsp;    public void setPrice(double price) {
+<b class="fc">&nbsp;        this.price = price;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public Meal(String mealName) {</b>
+<b class="fc">&nbsp;        this.name = mealName;</b>
+<b class="fc">&nbsp;        this.ingredients = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.dietaryTags = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.price = 0.0;</b>
+<b class="fc">&nbsp;        this.category = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.date = &quot;&quot;;</b>
+<b class="fc">&nbsp;        this.deliveryTime= new Date();</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public String getName() {
+<b class="fc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;String&gt; getIngredients() {
+<b class="fc">&nbsp;        return ingredients;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;String&gt; getDietaryTags() {
+<b class="fc">&nbsp;        return dietaryTags;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Setter methods for ingredients and dietaryTags
+&nbsp;    public void setName(String name) {
+<b class="fc">&nbsp;        this.name = name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setIngredients(List&lt;String&gt; ingredients) {
+<b class="fc">&nbsp;        this.ingredients = ingredients;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDietaryTags(List&lt;String&gt; dietaryTags) {
+<b class="fc">&nbsp;        this.dietaryTags = dietaryTags;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getCategory() {
+<b class="fc">&nbsp;        return category;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getDate() {
+<b class="fc">&nbsp;        return date;</b>
+&nbsp;    }
+&nbsp;    public void setCategory(String category) {
+<b class="nc">&nbsp;        this.category = category;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDate(String date) {
+<b class="nc">&nbsp;        this.date = date;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;     public List&lt;String&gt; getMealsToNotify(List&lt;Meal&gt; scheduledMeals, Date currentTime, int notificationWindowMinutes) {
+<b class="fc">&nbsp;        List&lt;String&gt; mealsToNotify = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="fc">&nbsp;        for (Meal meal : scheduledMeals) {</b>
+<b class="fc">&nbsp;            long diffMillis = meal.getDeliveryTime().getTime() - currentTime.getTime();</b>
+<b class="fc">&nbsp;            long diffMinutes = diffMillis / (60 * 1000);</b>
+&nbsp;
+<b class="pc">&nbsp;            if (diffMinutes &gt; 0 &amp;&amp; diffMinutes &lt;= notificationWindowMinutes) {</b>
+<b class="fc">&nbsp;                mealsToNotify.add(meal.getName());</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return mealsToNotify;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public static List&lt;Meal&gt; filterMealsByDateRange(List&lt;Meal&gt; meals, String startDate, String endDate) {
+<b class="fc">&nbsp;        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        return meals.stream()</b>
+<b class="fc">&nbsp;                .filter(meal -&gt; {</b>
+&nbsp;                    try {
+<b class="fc">&nbsp;                        Date mealDate = sdf.parse(meal.getDate());</b>
+<b class="fc">&nbsp;                        Date start = sdf.parse(startDate);</b>
+<b class="fc">&nbsp;                        Date end = sdf.parse(endDate);</b>
+<b class="fc">&nbsp;                        return !mealDate.before(start) &amp;&amp; !mealDate.after(end);</b>
+&nbsp;                    } catch (Exception e) {
+<b class="nc">&nbsp;                        logger.severe(&quot;Error parsing date: &quot; + e.getMessage());</b>
+<b class="nc">&nbsp;                        return false;</b>
+&nbsp;                    }
+&nbsp;                })
+<b class="fc">&nbsp;                .collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        return &quot;Meal{name=&#39;&quot; + name + &quot;&#39;, ingredients=&quot; + ingredients + &quot;, dietaryTags=&quot; + dietaryTags + &quot;}&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    public double getPrice() {
+<b class="fc">&nbsp;        return price;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Date getDeliveryTime() {
+<b class="fc">&nbsp;        return deliveryTime;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDeliveryTime(Date deliveryTime) {
+<b class="nc">&nbsp;        this.deliveryTime = deliveryTime;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-05-20 09:24</div>
+</div>
+</body>
+</html>

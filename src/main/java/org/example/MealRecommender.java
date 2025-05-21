@@ -66,12 +66,22 @@ public class MealRecommender {
 
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(";");
-                if (parts.length != 2) continue;
+                if (parts.length != 3) continue;
 
                 String name = parts[0].trim();
                 List<String> ingredients = Arrays.asList(parts[1].trim().split(",\\s*"));
 
-                simpleMeals.add(new Meal(name, ingredients, new ArrayList<>())); // empty tags
+                double price;
+                try {
+                    price = Double.parseDouble(parts[2].trim());
+                } catch (NumberFormatException e) {
+                    System.err.println("Invalid price for meal '" + name + "': " + parts[2]);
+                    continue; // skip this line if price is invalid
+                }
+
+                Meal meal = new Meal(name, ingredients, new ArrayList<>()); // empty tags
+                meal.setPrice(price);
+                simpleMeals.add(meal);
             }
 
         } catch (IOException e) {
@@ -80,4 +90,5 @@ public class MealRecommender {
 
         return simpleMeals;
     }
+
 }

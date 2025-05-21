@@ -1,4 +1,5 @@
-Vegan Salad;lettuce, tomato, cucumber, olive oil
-Grilled Chicken;chicken, olive oil, garlic
-Fruit Bowl;apple, banana, grapes, orange
-green salad;spinach, avocado, lime
+Vegan Salad;lettuce, tomato, cucumber, olive oil;12.99
+Grilled Chicken;chicken, olive oil, garlic;22.99
+Fruit Bowl;apple, banana, grapes, orange;17.99
+green salad;spinach, avocado, lime;15.00
+banana;hola,mola;16.93

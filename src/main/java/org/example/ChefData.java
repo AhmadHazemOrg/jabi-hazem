@@ -46,26 +46,13 @@ public class ChefData {
         }
     }
 
-    public void unassignTask(String taskName) {
-        if (taskList.remove(taskName)) {
-            currentTasks--;
-            System.out.println("Task unassigned from " + name + ": " + taskName);
-        } else {
-            System.out.println("Task not found for " + name);
-        }
-    }
+
 
     public boolean isAvailable() {
         return currentTasks < maxTasks;
     }
 
-    public List<String> getCurrentTasksDetails() {
-        return taskList;
-    }
 
-    public void updateExpertise(String newExpertise) {
-        this.expertise = newExpertise;
-    }
 
     @Override
     public String toString() {

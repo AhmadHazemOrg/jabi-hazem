@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.logging.Logger;
+
 public class Meal {
     private String name;
     private List<String> ingredients;
