@@ -42,7 +42,7 @@ public class IngredientSubstitutionSuggestions {
 
     @When("they select a sauce that contains nuts")
     public void they_select_a_sauce_that_contains_nuts() {
-        // استخدام دالة من IngredientSubstitutionData للتحقق من وجود حساسية ضد المكسرات
+
         suggestions = IngredientSubstitutionData.getNutFreeSauces(allergy, true);
     }
 

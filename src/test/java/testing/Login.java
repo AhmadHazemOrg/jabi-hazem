@@ -95,17 +95,18 @@ public class Login {
         loginResult = cm.login();
         loginMessage = cm.getLoginMessage();
     }
-
-
-    @Then("the login should fail  {string} message")
-    public void the_login_should_fail_with_a_message(String expectedMessage) {
+    private void assertLoginFailureWithMessage(String expectedMessage) {
         assertFalse(loginResult);
         assertEquals(expectedMessage, loginMessage);
     }
+
+    @Then("the login should fail  {string} message")
+    public void the_login_should_fail_with_a_message(String expectedMessage) {
+        assertLoginFailureWithMessage(expectedMessage);
+    }
     @Then("the login should fail with an with {string} message")
     public void the_login_should_fail_with_an_message(String expectedMessage) {
-        assertFalse(loginResult);
-        assertEquals(expectedMessage, loginMessage);
+        assertLoginFailureWithMessage(expectedMessage);
     }
 
 
