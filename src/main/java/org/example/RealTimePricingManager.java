@@ -12,9 +12,7 @@ public class RealTimePricingManager {
         this.selectedIngredient = ingredient;
     }
 
-    public String getSelectedIngredient() {
-        return selectedIngredient;
-    }
+
 
     public void querySuppliers() {
         // Simulate querying suppliers' APIs for current prices
@@ -44,14 +42,7 @@ public class RealTimePricingManager {
         return new ArrayList<>(supplierComparisons);
     }
 
-    // New method to alert manager when price changes significantly
-    public void alertManagerIfPriceChangeSignificant(double newPrice, int thresholdPercent) {
-        if (hasSignificantPriceChange(newPrice, thresholdPercent)) {
-            System.out.println("ALERT: Significant price change detected!");
-            System.out.println("Old Price: " + previousPrices.get(selectedIngredient));
-            System.out.println("New Price: " + newPrice);
-        }
-    }
+
 
     public static class SupplierInfo {
         private final String name;
@@ -70,17 +61,7 @@ public class RealTimePricingManager {
             return name;
         }
 
-        public double getPrice() {
-            return price;
-        }
 
-        public String getDeliveryTime() {
-            return deliveryTime;
-        }
-
-        public String getAvailability() {
-            return availability;
-        }
 
         @Override
         public String toString() {

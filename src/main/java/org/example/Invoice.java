@@ -17,14 +17,6 @@ public class Invoice {
     }
 
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
     public List<Meal> getMeals() {
         return meals;
     }

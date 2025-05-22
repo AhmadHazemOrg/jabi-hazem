@@ -30,11 +30,5 @@ public class MealData {
         INGREDIENT_PRICES.put("lamb", 6.0);
     }
 
-    public static boolean isLactoseFree(String ingredient) {
-        return LACTOSE_FREE_INGREDIENTS.contains(ingredient.toLowerCase());
-    }
 
-    public static boolean isAvailable(String ingredient, Set<String> outOfStock) {
-        return !outOfStock.contains(ingredient.toLowerCase());
-    }
 }

@@ -103,13 +103,9 @@ public class Meal {
     public String getDate() {
         return date;
     }
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+
+
 
      public List<String> getMealsToNotify(List<Meal> scheduledMeals, Date currentTime, int notificationWindowMinutes) {
         List<String> mealsToNotify = new ArrayList<>();
@@ -151,23 +147,8 @@ public class Meal {
     }
 
 
-    public void addIngredient(String ingredient) {
-    }
-    public List<String> readIngredients(String filename) {
-        List<String> ingredients = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                line = line.trim();
-                if (!line.isEmpty()) {
-                    ingredients.add(line);
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("Error reading ingredient file: " + e.getMessage());
-        }
-        return ingredients;
-    }
+
+
 
     public double getPrice() {
         return price;
@@ -177,7 +158,5 @@ public class Meal {
         return deliveryTime;
     }
 
-    public void setDeliveryTime(Date deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
+
 }
