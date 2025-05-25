@@ -136,10 +136,7 @@ public class Meal {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public String toString() {
-        return "Meal{name='" + name + "', ingredients=" + ingredients + ", dietaryTags=" + dietaryTags + "}";
-    }
+
 
 
 
