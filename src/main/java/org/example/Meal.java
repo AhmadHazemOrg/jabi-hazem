@@ -1,8 +1,6 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -53,9 +51,6 @@ public class Meal {
         this.ingredients = new ArrayList<>();
         this.dietaryTags = new ArrayList<>();
         this.deliveryTime= new Date();
-    }
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public Meal(String mealName) {
