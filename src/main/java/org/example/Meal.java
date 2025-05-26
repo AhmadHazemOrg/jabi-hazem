@@ -53,7 +53,9 @@ public class Meal {
         this.dietaryTags = new ArrayList<>();
         this.deliveryTime= new Date();
     }
-
+    public void setPrice(double price) {
+        this.price = price;
+    }
     public Meal(String mealName) {
         this.name = mealName;
         this.ingredients = new ArrayList<>();
