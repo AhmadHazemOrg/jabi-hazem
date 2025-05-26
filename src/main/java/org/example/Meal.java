@@ -79,7 +79,7 @@ public class Meal {
         return dietaryTags;
     }
 
-    // Setter methods for ingredients and dietaryTags
+
     public void setName(String name) {
         this.name = name;
     }
