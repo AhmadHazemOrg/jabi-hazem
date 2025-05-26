@@ -278,7 +278,7 @@ public class Main {
                                             grandTotal += m.getPrice();
                                         }
 
-                                        // اطبع الفاتورة والمجموع
+
                                         System.out.println("\n🧾 INVOICE SUMMARY");
                                         System.out.println("Customer: " + customer.getUsername());
                                         System.out.println("----------------------------------");

@@ -142,9 +142,6 @@ public class Meal {
 
 
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
 
 
